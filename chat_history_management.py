@@ -16,6 +16,7 @@ class ChatHistory:
             ),
             max_tokens=2048,
             echo=False,
+            stop=["[INST]", "<<SYS>>", "</s>", "<s>", "<</sys>>"],
         )
         self.history = [history["choices"][0]["text"]]
 
