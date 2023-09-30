@@ -1,0 +1,7 @@
+# model_path: "./models/llama-2-13b-chat.Q8_0.gguf"
+model_path: "./models/mistral-7b-instruct-v0.1.Q8_0"
+model_url: "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q8_0.gguf"
+# model_url: "https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q8_0.gguf"
+system_prompt: "./config/system_prompt.txt"
+prompt_template: "./config/prompt_template_mistral.txt"
+chat_summarization_instruction: "Please, summarize the following conversation:"

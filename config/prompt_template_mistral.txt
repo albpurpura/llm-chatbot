@@ -1,0 +1,7 @@
+<s>[INST]
+<<SYS>>
+{system_prompt}
+<</SYS>>
+{instruction}
+[/INST]
+</s>
