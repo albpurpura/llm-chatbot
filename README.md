@@ -8,3 +8,5 @@
     
     - Tkinter GUI:
     `python gui.py`
+
+Tested on Linux, no GPU.
