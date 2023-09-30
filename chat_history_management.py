@@ -12,7 +12,7 @@ class ChatHistory:
     def summarize_history(self, history, llm, chat_summarization_instruction):
         history = llm(
             self.instruction_template.format(
-                instruction=chat_summarization_instruction + '\n' + history
+                instruction=chat_summarization_instruction + "\n" + history
             ),
             max_tokens=2048,
             echo=False,
@@ -20,7 +20,8 @@ class ChatHistory:
         )
         self.history = [history["choices"][0]["text"]]
 
-        return self.get_chat_history()
+        history = self.get_chat_history()
+        return history
 
     def get_chat_history(self):
         history = "\n".join(self.history)

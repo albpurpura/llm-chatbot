@@ -14,10 +14,9 @@ class LLM:
             self.conf["system_prompt"] = f.read()
 
         self.llm = Llama(model_path=self.conf["model_path"], n_ctx=2048)
-        self.instruction_template = self.format_template(
-            self.conf["prompt_template"], self.conf["system_prompt"]
-        )
-        self.chat_history = ChatHistory(self.instruction_template, 5)
+        self.instruction_template = self.conf["prompt_template"]
+        # self.format_template(self.conf["prompt_template"], self.conf["system_prompt"])
+        self.chat_history = ChatHistory(self.instruction_template, 3)
 
     def format_template(self, template, system_prompt):
         modified_template = template.replace("{system_prompt}", system_prompt)
@@ -31,12 +30,12 @@ class LLM:
             prompt = self.instruction_template.format(instruction=p)
 
             history = self.chat_history.get_chat_history()
-            if len(self.llm.tokenize(history.encode("utf-8"))) > 1000:
-                history = self.chat_history.summarize_history(
-                    history,
-                    self.llm,
-                    self.conf["chat_summarization_instruction"],
-                )
+            # if len(self.llm.tokenize(history.encode("utf-8"))) > 500:
+            #     history = self.chat_history.summarize_history(
+            #         history,
+            #         self.llm,
+            #         self.conf["chat_summarization_instruction"],
+            #     )
 
             generator = self.llm(
                 history + "\n" + prompt,
