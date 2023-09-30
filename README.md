@@ -1,8 +1,10 @@
 # Instructions
-1) Edit config file withe the urls and paths of your models from Huggingface.
+1) Edit config file withe the urls and paths of your models from Huggingface
+2) `pip install -r requirements.txt`
+3) Launch chatbot:
 
-2a) Launch terminal UI with:
+Terminal-based interface:
 `python main.py`
 
-2b) Launch GUI with:
+GUI with:
 `python gui.py`
